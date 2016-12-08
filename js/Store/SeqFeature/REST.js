@@ -4,42 +4,21 @@
  */
 define([
            'dojo/_base/declare',
-           'dojo/_base/lang',
-           'dojo/_base/array',
-           'dojo/io-query',
-           'dojo/request',
-           'dojo/Deferred',
-           'JBrowse/Store/LRUCache',
-           'JBrowse/Store/SeqFeature',
-           'JBrowse/Store/DeferredFeaturesMixin',
-           'JBrowse/Store/DeferredStatsMixin',
-           'JBrowse/Util',
-           'JBrowse/Model/SimpleFeature',
-		   'JBrowse/Store/SeqFeature/REST'
+           'JBrowse/Store/SeqFeature/REST'
        ],
        function(
            declare,
-           lang,
-           array,
-           ioquery,
-           dojoRequest,
-           Deferred,
-           LRUCache,
-           SeqFeatureStore,
-           DeferredFeaturesMixin,
-           DeferredStatsMixin,
-           Util,
-           SimpleFeature,
-		   REST
+           REST
        ) {
 
 return declare( REST,
 {
-
+    // The only difference in this code is query.organism is automatically set. The rest is 100% as-is from REST.js
     getFeatures: function( query, featureCallback, endCallback, errorCallback ) {
         var thisB = this;
+        //query.organism = this.browser.config.datasets[this.browser.config.dataset_id].name;
+        query.organism = 'asdf';
         query = this._assembleQuery( query );
-		console.log(query)
         var url = this._makeURL( 'features', query );
 
         // look for cached feature regions if configured to do so
@@ -62,6 +41,5 @@ return declare( REST,
         }
     },
 
-	// Nothing yet
 });
 });

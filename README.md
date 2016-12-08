@@ -1,37 +1,29 @@
-# gccontent
+# Apollo CACAO Plugin
 
-A JBrowse plugin for plotting GCContent. Plugin consists of a storeClass that
-automatically calculates the percentage of G/C bases in a region, a track
-type that derives from the Wiggle XY or density types, and a dialog box to
-adjust the sliding window size
+A JBrowse plugin for talking to [CACAO](https://github.com/TAMU-CPT/cacao-frontend) servers.
+Plugin consists of a storeClass that lightly wraps the default REST.js implementation with
+a small change that allows it to function in the context of an Apollo JBrowse environment.
 
-
-![](img/out.png)
-
+![](./img/Embedded CACAO.png)
 
 ## Example configuration
 
-    {
-      "storeClass" : "JBrowse/Store/SeqFeature/IndexedFasta",
-      "type": "GCContent/View/Track/GCContentXY",
-      "label": "GCContent",
-      "urlTemplate" : "Amel_4.5_scaffolds.fa",
-      "bicolor_pivot": 0.5
-    }
+```json
+{
+	"storeClass" : "CACAO/Store/SeqFeature/REST",
+	"type"       : "CACAO/View/Track/CanvasFeatures",
+	"label"      : "CACAO",
+	"key"        : "CACAO",
+	"baseUrl"    : "https://your-server/cacao-backend/jbrowse/",
+}
+```
 
-## Options
+## Showcase
 
-General options:
+Simplified menu due to restricted CACAO functionality
 
-* storeClass: tested with JBrowse/Store/SeqFeature/IndexedFasta and JBrowse/Store/SeqFeature/SequenceChunks (i.e. output of prepare-refseqs.pl)
-* windowSize: Size of sliding window (default 100)
-* windowDelta: Step size of the sliding window (default 10)
-* type: GCContent/View/Track/GCContentXY (XYPlot) or GCContent/View/Track/GCContent (density)
+![](./img/menu.png)
 
-Other default params
+Simplified details page additionally links to respective GO/PMID entries in CACAO
 
-* bicolor_pivot: 0.5
-* max_score: 1
-* min_score: 0
-
-See http://gmod.org/wiki/JBrowse_Configuration_Guide#Wiggle.2FBigWig_Tracks_.28XYPlot.2C_Density.29 for more options
+![](./img/details.png)
