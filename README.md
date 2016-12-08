@@ -4,7 +4,7 @@ A JBrowse plugin for talking to [CACAO](https://github.com/TAMU-CPT/cacao-fronte
 Plugin consists of a storeClass that lightly wraps the default REST.js implementation with
 a small change that allows it to function in the context of an Apollo JBrowse environment.
 
-![](./img/Embedded CACAO.png)
+![](./img/Embedded-CACAO.png)
 
 ## Example configuration
 
