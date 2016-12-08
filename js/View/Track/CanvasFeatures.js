@@ -4,46 +4,16 @@
 
 define( [
             'dojo/_base/declare',
-            'dojo/_base/array',
-            'dojo/_base/lang',
             'dojo/_base/event',
-            'dojo/mouse',
-            'dojo/dom-construct',
-            'dojo/Deferred',
-            'dojo/on',
-            'JBrowse/has',
             'JBrowse/Util',
-            'JBrowse/View/GranularRectLayout',
-            'JBrowse/View/Track/BlockBased',
-            'JBrowse/View/Track/_ExportMixin',
-            'JBrowse/Errors',
             'CACAO/View/Track/_FeatureDetailMixin',
-            'JBrowse/View/Track/_FeatureContextMenusMixin',
-            'JBrowse/View/Track/_YScaleMixin',
-            'JBrowse/Model/Location',
-            'JBrowse/Model/SimpleFeature',
             'JBrowse/View/Track/CanvasFeatures'
         ],
         function(
             declare,
-            array,
-            lang,
             domEvent,
-            mouse,
-            domConstruct,
-            Deferred,
-            on,
-            has,
             Util,
-            Layout,
-            BlockBasedTrack,
-            ExportMixin,
-            Errors,
             FeatureDetailMixin,
-            FeatureContextMenuMixin,
-            YScaleMixin,
-            Location,
-            SimpleFeature,
             CanvasFeatures
         ) {
 
@@ -53,12 +23,12 @@ return declare([CanvasFeatures, FeatureDetailMixin],
     // Again, entirely the same as  JBrowse/View/Track/CanvasFeatures.js except with additions to the menu.
     _defaultConfig: function() {
         return Util.deepUpdate(
-            lang.clone( this.inherited(arguments) ),
+            dojo.clone( this.inherited(arguments) ),
             {
             maxFeatureScreenDensity: 0.5,
 
             // default glyph class to use
-            glyph: lang.hitch( this, 'guessGlyphType' ),
+            glyph: dojo.hitch( this, 'guessGlyphType' ),
 
             // maximum number of pixels on each side of a
             // feature's bounding coordinates that a glyph is

@@ -4,23 +4,13 @@
 define([
             'dojo/_base/declare',
             'dojo/_base/array',
-            'dojo/_base/lang',
-            'dojo/aspect',
             'dojo/dom-construct',
-            'JBrowse/Util',
-            'JBrowse/View/FASTA',
-            'JBrowse/View/_FeatureDescriptionMixin',
             'JBrowse/View/Track/_FeatureDetailMixin'
         ],
         function(
             declare,
             array,
-            lang,
-            aspect,
             domConstruct,
-            Util,
-            FASTAView,
-            FeatureDescriptionMixin,
             FeatureDetailMixin
         ) {
 
