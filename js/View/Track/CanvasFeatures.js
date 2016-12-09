@@ -58,11 +58,14 @@ return declare([CanvasFeatures, FeatureDetailMixin],
                 description: 'note, description',
                 color: function(feature){
                     if(feature.data.state == 1){
-                        return 'yellow';
+                        // yellow
+                        return '#fbf77d';
                     } else if(feature.data.state == 2){
-                        return 'green';
+                        // green
+                        return '#98d789';
                     } else {
-                        return 'red'
+                        // red
+                        return '#f77e75'
                     }
                 },
 
@@ -83,8 +86,8 @@ return declare([CanvasFeatures, FeatureDetailMixin],
                 {
                    "iconClass" : "dijitIconDatabase",
                    "action" : "iframeDialog",
-                   "url" : function( track, feature, featureDiv ){ return 'https://cpt.tamu.edu/cacao/#/gaf/' + feature._uniqueID;  },
-                   "label" : "See Annotation in CACAO",
+                   "url" : function( track, feature, featureDiv ){ return 'https://cpt.tamu.edu/cacao/#/gaf/' + feature._uniqueID; },
+                   "label" : "See Annotation",
                    "title" : "CACAO - {name}"
                 },
                 { label: 'View details',
