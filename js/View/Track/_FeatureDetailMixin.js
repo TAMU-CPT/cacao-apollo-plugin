@@ -49,10 +49,10 @@ return declare(FeatureDetailMixin, {
 
                 if(t === 'go'){
                     label = "GO Term";
-                    value = '<a href="https://cpt.tamu.edu/cacao/#/goid/' + value +'" target="_blank">' + value + '</a>';
+                    value = '<a href="https://cpt.tamu.edu/cacao/#/goid/' + value +'?hideNav=1" target="_blank">' + value + '</a>';
                 } else if (t === 'pmid'){
                     label = "PMID";
-                    value = '<a href="https://cpt.tamu.edu/cacao/#/pmid/' + value +'" target="_blank">' + value + '</a>';
+                    value = '<a href="https://cpt.tamu.edu/cacao/#/pmid/' + value +'?hideNav=1" target="_blank">' + value + '</a>';
                 } else if (t === 'state'){
                     label = "Review State";
                     if(value === 0){

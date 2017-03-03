@@ -86,7 +86,7 @@ return declare([CanvasFeatures, FeatureDetailMixin],
                 {
                    "iconClass" : "dijitIconDatabase",
                    "action" : "iframeDialog",
-                   "url" : function( track, feature, featureDiv ){ return 'https://cpt.tamu.edu/cacao/#/gaf/' + feature._uniqueID; },
+                   "url" : function( track, feature, featureDiv ){ return 'https://cpt.tamu.edu/cacao/#/gaf/' + feature._uniqueID + '?hideNav=1'; },
                    "label" : "See Annotation",
                    "title" : "CACAO - {name}"
                 },
