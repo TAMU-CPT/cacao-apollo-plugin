@@ -16,8 +16,7 @@ return declare( REST,
     // The only difference in this code is query.organism is automatically set. The rest is 100% as-is from REST.js
     getFeatures: function( query, featureCallback, endCallback, errorCallback ) {
         var thisB = this;
-        //query.organism = this.browser.config.datasets[this.browser.config.dataset_id].name;
-        query.organism = 'asdf';
+        query.organism = this.browser.config.datasets[this.browser.config.dataset_id].name;
         query = this._assembleQuery( query );
         var url = this._makeURL( 'features', query );
 
