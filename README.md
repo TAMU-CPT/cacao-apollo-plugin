@@ -28,6 +28,9 @@ Simplified details page additionally links to respective GO/PMID entries in CACA
 
 ![](./img/details.png)
 
+## License
+
+AGPL-3.0
 
 ## Support
 
